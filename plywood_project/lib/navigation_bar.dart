@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:image_downloader/image_downloader.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:plywood_project/table.dart';
@@ -22,6 +23,12 @@ class HomeScreen extends HookWidget {
     }
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Wood Vision',
+          style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w600),
+        ),
+      ),
       body: PageView(
         controller: pageController,
         onPageChanged: onPageChanged,
@@ -72,22 +79,12 @@ class ImageScreen extends HookWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CachedNetworkImage(
-              imageUrl: imageUrl,
-              placeholder: (context, url) =>
-                  Center(child: CircularProgressIndicator()),
-              errorWidget: (context, url, error) => Icon(Icons.error),
-              width: MediaQuery.of(context).size.width * 0.8,
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _downloadImage,
-              child: Text("Save Image"),
-            )
-          ],
+        child: CachedNetworkImage(
+          imageUrl: imageUrl,
+          placeholder: (context, url) =>
+              Center(child: CircularProgressIndicator()),
+          errorWidget: (context, url, error) => Icon(Icons.error),
+          width: MediaQuery.of(context).size.width * 0.8,
         ),
       ),
     );

@@ -65,7 +65,7 @@ class HomePage extends HookWidget {
         var request = http.MultipartRequest('POST', uri);
         request.files.add(
           await http.MultipartFile.fromPath(
-            'image', // 🔥 This should match the API's expected key
+            'image',
             imageFile.value!.path,
             filename: basename(imageFile.value!.path),
           ),
@@ -88,12 +88,12 @@ class HomePage extends HookWidget {
         isUploading.value = false;
 
         // Show response
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text("Response: ${decodedResponse.toString()}"),
-            backgroundColor: Colors.green,
-          ),
-        );
+        // ScaffoldMessenger.of(context).showSnackBar(
+        //   SnackBar(
+        //     content: Text("Response: ${decodedResponse.toString()}"),
+        //     backgroundColor: Colors.green,
+        //   ),
+        // );
         Navigator.push(
           context,
           MaterialPageRoute(
