@@ -1,0 +1,2 @@
+C:/Users/Satvik/Desktop/Plywood/plywood_project/android/app/.cxx/Debug/n3m2f2g4/x86/CMakeFiles/edit_cache.dir
+C:/Users/Satvik/Desktop/Plywood/plywood_project/android/app/.cxx/Debug/n3m2f2g4/x86/CMakeFiles/rebuild_cache.dir
